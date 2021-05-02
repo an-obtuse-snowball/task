@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<title>API Handler | IT Career Switch</title>
+		<link rel="stylesheet" href="./libs/css/.preloader.css">
+		<link rel="stylesheet" href="./libs/css/styles.css">
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+		<meta name="description" content="API Handler">
+		<meta name="author" content="Michael Snow">
+
+	</head>
+
+	<body>
+		<div id =”preloader”>
+			<table>
+				<tr>
+					<th>API Name</th>
+					<th>API Description</th>
+					<th>-</th>
+				</tr>
+				<tr>
+					<td><i>Country Information</i></td>
+
+					<td id= "CountryEntry">
+						<select id="selCountry">
+							<option value="GB">Great Britain</option>
+							<option value="FR">France</option>
+							<option value="DE">Germany</option>
+							<option value="US">USA</option>
+						</select>
+				
+						<select id="selLanguage">
+							<option value="en">English</option>
+							<option value="fr">Francais</option>
+							<option value="de">Deutsche</option>
+						</select>
+
+					</td>
+					<td><button id = "btnCountryInfo">Get Information</button></td>
+
+				</tr>
+				<tr>
+					<td><i>Ocean Selector</i></td>
+
+					<td id= "oceanEntry">
+						<label for "oceanLong">Longitude</label>
+						<input type = "number" id ="oceanLong" name = "oceanLong">
+
+						<label for "oceanLat">Latitude</label>
+						<input type = "number" id ="oceanLat" name = "oceanLat">
+
+					</td>
+					<td><button id = "btnOceanSubmit">Get Information</button></td>
+
+				</tr>
+				<tr>
+					<td><i>Postal Lookup</i></td>
+										
+					<td id = "postalEntry">
+						<label for "postalLong">Postal Longitude</label>
+						<input type = "number" id ="postalLong" name = "PostalLong"><br>
+						
+						<label for "postalLong">Postal Latitude</label>
+						<input type = "number" id ="postalLatitude" name = "PostalLatitude"><br>
+
+						<label for "selLanguage">Radius (KM)</label>
+						<select id="selLanguage">
+							<option value="5">5 KM Radius</option>
+							<option value="10">10 KM Radius</option>
+							<option value="25">25 KM Radius</option>
+						</select>
+					</td>
+					<td><button id = "btnPostalSubmit">Get Information</button></td>
+				
+				</tr>
+			</table>
+		
+		<div id = "countryContainer">
+			<table>
+				<h2>Country Lookup Information</h2>
+				<tr>
+					<td align="right">
+						Continent:
+					</td>
+					<td id = 'continent'>
+
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						Capital City:
+					</td>
+					<td id = 'capital'>
+						
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						Native Language:
+					</td>
+					<td id = 'languages'>
+						
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						Estimated Population:
+					</td>
+					<td id = 'Population'>
+						
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						Area (Square KM):
+					</td>
+					<td id = 'areaInSqKm'>
+						
+					</td>
+				</tr>
+			</table>
+
+			<div id = oceanContainer>
+				<table>
+					<h2>Oceans Lookup</h2>
+
+				</table>
+			</div>
+		</div>
+
+		<div id = postalContainer>
+			<table>
+				<h2>Postal Lookup</h2>
+
+			</table>
+		</div>
+
+	</div>
+		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+		<script type="application/javascript" src="libs/js/script.js"></script>
+
+	</body>
+
+</html>
