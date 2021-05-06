@@ -24,36 +24,27 @@
 					<th>-</th>
 				</tr>
 				<tr>
-					<td><i>Country Information</i></td>
+					<td><i>Address Lookup (US)</i></td>
 
-					<td id= "CountryEntry">
-						<select id="selCountry">
-							<option value="GB">Great Britain</option>
-							<option value="FR">France</option>
-							<option value="DE">Germany</option>
-							<option value="US">USA</option>
-						</select>
-				
-						<select id="selLanguage">
-							<option value="en">English</option>
-							<option value="fr">Francais</option>
-							<option value="de">Deutsche</option>
-						</select>
-
+					<td id= "addressEntry">
+						<label for "addressLat">Latitude</label>
+						<input type = "number" id ="addressLat" name = "addressLat">
+						<br>
+						<label for "addressLong">Longitude</label>
+						<input type = "number" id ="addressLong" name = "addressLong">
 					</td>
-					<td><button id = "btnCountryInfo">Get Information</button></td>
+					<td><button id = "btnAddressSubmit">Get Information</button></td>
 
 				</tr>
 				<tr>
 					<td><i>Ocean Selector</i></td>
 
 					<td id= "oceanEntry">
-						<label for "oceanLong">Longitude</label>
-						<input type = "number" id ="oceanLong" name = "oceanLong">
-
 						<label for "oceanLat">Latitude</label>
-						<input type = "number" id ="oceanLat" name = "oceanLat">
-
+						<input type = "number" id ="oceanLat" name = "oceanLat" value = "40.78343">
+						<br>
+						<label for "oceanLong">Longitude</label>
+						<input type = "number" id ="oceanLong" name = "oceanLong" value = "-43.96625">
 					</td>
 					<td><button id = "btnOceanSubmit">Get Information</button></td>
 
@@ -80,46 +71,38 @@
 				</tr>
 			</table>
 		
-		<div id = "countryContainer">
+		<div id = "addressContainer">
 			<table>
-				<h2>Country Lookup Information</h2>
+				<h2>Address Lookup (US Only)</h2>
 				<tr>
 					<td align="right">
-						Continent:
+						Street Number:
 					</td>
-					<td id = 'continent'>
+					<td id = 'streetNumber'>
 
 					</td>
 				</tr>
 				<tr>
 					<td align="right">
-						Capital City:
+						Street:
 					</td>
-					<td id = 'capital'>
+					<td id = 'street'>
 						
 					</td>
 				</tr>
 				<tr>
 					<td align="right">
-						Native Language:
+						Postal Code:
 					</td>
-					<td id = 'languages'>
+					<td id = 'postalCode'>
 						
 					</td>
 				</tr>
 				<tr>
 					<td align="right">
-						Estimated Population:
+						Country:
 					</td>
-					<td id = 'Population'>
-						
-					</td>
-				</tr>
-				<tr>
-					<td align="right">
-						Area (Square KM):
-					</td>
-					<td id = 'areaInSqKm'>
+					<td id = 'countryCode'>
 						
 					</td>
 				</tr>
@@ -128,7 +111,12 @@
 			<div id = oceanContainer>
 				<table>
 					<h2>Oceans Lookup</h2>
-
+					<tr>
+						<td align="right">
+							Ocean:
+						</td>
+						<td id ='oceanName'></td>
+					</tr>
 				</table>
 			</div>
 		</div>
