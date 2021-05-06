@@ -52,28 +52,32 @@ $('#btnAddressSubmit').click(function() {
 
 });
 
-$('#btnOceanSubmit').click(function() {
+$('#btnTimezoneSubmit').click(function() {
 $.ajax({
-    url: "libs/php/getOceanInfo.php",
+    url: "libs/php/getTimezone.php",
     type: 'POST',
     dataType: 'json',
     data: {
-        lat: $('#oceanLat').val(),
-        long: $('#oceanLong').val()
+        lat: $('#timezoneLat').val(),
+        long: $('#timezoneLong').val()
     },
     success: function(result) {
-
+        console.log("Basic success!");
         console.log(JSON.stringify(result));
         if (result.status.name == "ok") {
-            console.log("OceanLookup Success!")
+            console.log("Timezone Request: Success!")
             console.log(result['data']);
-            $('#oceanName').empty();
-            $('#oceanName').append(result['data']['name']);
+            $('#timezoneCountry').empty();
+            $('#timezoneCountry').append(result['countryName']);
+            $('#timezoneName').empty();
+            $('#timezoneName').append(result['gmtOffset']);
 
         }
         else if (result.status.name == "no data") {
-            $('#oceanName').empty();
-            $('#oceanName').append('No Data Available');
+            $('#timezoneCountry').empty();
+            $('#timezoneName').empty();
+            $('#timezoneCountry').append('No Data Available');
+            $('#timezoneName').append('No Data Available');
         }
 
     },
@@ -82,7 +86,6 @@ $.ajax({
         console.log(jqXHR);
         console.log(textStatus);
         console.log (errorThrown);
-        console.log(result['data']);
     }
 }); 
 
