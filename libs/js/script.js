@@ -70,11 +70,11 @@ $.ajax({
             console.log("Earthquake Request: Success!")
             console.log(result['data']);
             $('#eqDate').empty();
-            $('#eqDate').append(result[0]['datetime']);
+            $('#eqDate').append(result['data'][0]['datetime']);
             $('#eqDepth').empty();
-            $('#eqDepth').append(result[0]['depth']);
+            $('#eqDepth').append(result['data'][0]['depth']);
             $('#eqMagnitude').empty();
-            $('#eqMagnitude').append(result[0]['magnitude']);
+            $('#eqMagnitude').append(result['data'][0]['magnitude']);
 
         }
         else if (result.status.name == "no data") {
@@ -92,6 +92,7 @@ $.ajax({
         console.log(jqXHR);
         console.log(textStatus);
         console.log (errorThrown);
+        console.log(result);
     }
 }); 
 
@@ -99,18 +100,22 @@ $.ajax({
 
 $('#btnPostalSubmit').click(function() {
     $.ajax({
-        url: "libs/php/getOceanInfo.php",
+        url: "libs/php/getPostalLookup.php",
         type: 'POST',
         dataType: 'json',
         data: {
-            lat: $('#oceanLong').val(),
-            long: $('#oceanLat').val()
+            lat: $('#postalLat').val(),
+            long: $('#postalLong').val(),
+            radius: $('#postalRadius').val()
         },
         success: function(result) {
     
             console.log(JSON.stringify(result));
             if (result.status.name == "ok") {
-                console.log("OceanLookup Success!")
+                $('#placeName').empty();
+                $('#placeName').append(result['data'][0]['placeName']);
+                $('#postalZip').empty();
+                $('#postalZip').append(result['data'][0]['postalCode']);
             }
     
         },

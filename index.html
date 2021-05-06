@@ -41,16 +41,16 @@
 
 					<td id= "eqEntry">
 						<label for "eqNorth">North </label>
-						<input type = "number" id ="eqNorth" name = "eqNorth" value = "44.1">
+						<input type = "number" id ="eqNorth" name = "eqNorth">
 						<br>
 						<label for "eqEast">East</label>
-						<input type = "number" id ="eqEast" name = "eqEast" value = "-9.9">
+						<input type = "number" id ="eqEast" name = "eqEast">
 						<br>
 						<label for "eqNorth">South</label>
-						<input type = "number" id ="eqSouth" name = "eqSouth" value = "-22.4">
+						<input type = "number" id ="eqSouth" name = "eqSouth">
 						<br>
 						<label for "eqNorth">West</label>
-						<input type = "number" id ="eqWest" name = "eqWest" value = "-55.2">
+						<input type = "number" id ="eqWest" name = "eqWest">
 						<br>
 
 					</td>
@@ -64,11 +64,11 @@
 						<label for "postalLong">Postal Longitude</label>
 						<input type = "number" id ="postalLong" name = "PostalLong"><br>
 						
-						<label for "postalLong">Postal Latitude</label>
-						<input type = "number" id ="postalLatitude" name = "PostalLatitude"><br>
+						<label for "postalLat">Postal Latitude</label>
+						<input type = "number" id ="postalLat" name = "postalLat"><br>
 
-						<label for "selLanguage">Radius (KM)</label>
-						<select id="selLanguage">
+						<label for "postalRadius">Radius (KM)</label>
+						<select id="postalRadius">
 							<option value="5">5 KM Radius</option>
 							<option value="10">10 KM Radius</option>
 							<option value="25">25 KM Radius</option>
@@ -83,34 +83,34 @@
 			<table>
 				<h2>Address Lookup (US Only)</h2>
 				<tr>
-					<td align="right">
+					<td>
 						Street Number:
 					</td>
-					<td id = 'streetNumber' align="right">
+					<td id = 'streetNumber'>
 
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
+					<td>
 						Street:
 					</td>
-					<td id = 'street' align="right">
+					<td id = 'street'>
 						
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
+					<td>
 						Postal Code:
 					</td>
-					<td id = 'postalCode' align="right">
+					<td id = 'postalCode'>
 						
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
+					<td>
 						Country:
 					</td>
-					<td id = 'countryCode' align="right">
+					<td id = 'countryCode'>
 						
 					</td>
 				</tr>
@@ -120,22 +120,22 @@
 				<table>
 					<h2>Earthquake Lookup</h2>
 					<tr>
-						<td align="right">
+						<td>
 							Date/Time:
 						</td>
-						<td id ='eqDate' align="right"></td>
+						<td id ='eqDate'></td>
 					</tr>
 					<tr>
-						<td align="right">
+						<td>
 							Depth:
 						</td>
-						<td id ='eqDepth' align="right"></td>
+						<td id ='eqDepth'></td>
 					</tr>
 					<tr>
-						<td align="right">
+						<td>
 							Magnitude:
 						</td>
-						<td id ='eqMagnitude' align="right"></td>
+						<td id ='eqMagnitude'></td>
 					</tr>
 				</table>
 			</div>
@@ -144,7 +144,18 @@
 		<div id = postalContainer>
 			<table>
 				<h2>Postal Lookup</h2>
-
+				<tr>
+					<td>
+						Postal Name:
+					</td>
+					<td id ='placeName'></td>
+				</tr>
+				<tr>
+					<td>
+						Postal Code:
+					</td>
+					<td id ='postalZip'></td>
+				</tr>
 			</table>
 		</div>
 
