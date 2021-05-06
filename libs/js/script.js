@@ -52,32 +52,38 @@ $('#btnAddressSubmit').click(function() {
 
 });
 
-$('#btnTimezoneSubmit').click(function() {
+$('#btnEqSubmit').click(function() {
 $.ajax({
-    url: "libs/php/getTimezone.php",
+    url: "libs/php/getEarthquake.php",
     type: 'POST',
     dataType: 'json',
     data: {
-        lat: $('#timezoneLat').val(),
-        long: $('#timezoneLong').val()
+        north: $('#eqNorth').val(),
+        east: $('#eqEast').val(),
+        south: $('#eqSouth').val(),
+        west: $('#eqWest').val()
     },
     success: function(result) {
         console.log("Basic success!");
         console.log(JSON.stringify(result));
         if (result.status.name == "ok") {
-            console.log("Timezone Request: Success!")
+            console.log("Earthquake Request: Success!")
             console.log(result['data']);
-            $('#timezoneCountry').empty();
-            $('#timezoneCountry').append(result['countryName']);
-            $('#timezoneName').empty();
-            $('#timezoneName').append(result['gmtOffset']);
+            $('#eqDate').empty();
+            $('#eqDate').append(result[0]['datetime']);
+            $('#eqDepth').empty();
+            $('#eqDepth').append(result[0]['depth']);
+            $('#eqMagnitude').empty();
+            $('#eqMagnitude').append(result[0]['magnitude']);
 
         }
         else if (result.status.name == "no data") {
-            $('#timezoneCountry').empty();
-            $('#timezoneName').empty();
-            $('#timezoneCountry').append('No Data Available');
-            $('#timezoneName').append('No Data Available');
+            $('#eqDate').empty();
+            $('#eqDepth').empty();
+            $('#eqMagnitude').empty();
+            $('#eqDate').append('No Data Available');
+            $('#eqDepth').append('No Data Available');
+            $('#eqMagnitude').append('No Data Available');
         }
 
     },

@@ -37,16 +37,24 @@
 
 				</tr>
 				<tr>
-					<td><i>Timezone Lookup</i></td>
+					<td><i>earthquake Lookup</i></td>
 
-					<td id= "timezoneEntry">
-						<label for "timezoneLat">Latitude</label>
-						<input type = "number" id ="timezoneLat" name = "timezoneLat" value = "47.01">
+					<td id= "eqEntry">
+						<label for "eqNorth">North </label>
+						<input type = "number" id ="eqNorth" name = "eqNorth" value = "44.1">
 						<br>
-						<label for "timezoneLong">Longitude</label>
-						<input type = "number" id ="timezoneLong" name = "timezoneLong" value = "10.2">
+						<label for "eqEast">East</label>
+						<input type = "number" id ="eqEast" name = "eqEast" value = "-9.9">
+						<br>
+						<label for "eqNorth">South</label>
+						<input type = "number" id ="eqSouth" name = "eqSouth" value = "-22.4">
+						<br>
+						<label for "eqNorth">West</label>
+						<input type = "number" id ="eqWest" name = "eqWest" value = "-55.2">
+						<br>
+
 					</td>
-					<td><button id = "btnTimezoneSubmit">Get Information</button></td>
+					<td><button id = "btnEqSubmit">Get Information</button></td>
 
 				</tr>
 				<tr>
@@ -108,20 +116,26 @@
 				</tr>
 			</table>
 
-			<div id = oceanContainer>
+			<div id = eqContainer>
 				<table>
-					<h2>Oceans Lookup</h2>
+					<h2>Earthquake Lookup</h2>
 					<tr>
 						<td align="right">
-							Country:
+							Date/Time:
 						</td>
-						<td id ='timezoneCountry' align="right"></td>
+						<td id ='eqDate' align="right"></td>
 					</tr>
 					<tr>
 						<td align="right">
-							Timezone Offset (GMT Offset):
+							Depth:
 						</td>
-						<td id ='timezoneName' align="right"></td>
+						<td id ='eqDepth' align="right"></td>
+					</tr>
+					<tr>
+						<td align="right">
+							Magnitude:
+						</td>
+						<td id ='eqMagnitude' align="right"></td>
 					</tr>
 				</table>
 			</div>

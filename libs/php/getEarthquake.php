@@ -6,7 +6,7 @@
 	error_reporting(E_ALL);
 
 	$executionStartTime = microtime(true);
-		$url='http://api.geonames.org/timezoneJSON?formatted=true&lat=' . $_REQUEST['lat'] . '&lng=' . $_REQUEST['long'] . '&username=Vexxtraordinary';
+		$url='http://api.geonames.org/earthquakesJSON?formatted=true&north=' . $_REQUEST['north'] . '&east=' . $_REQUEST['east']. '&south=' . $_REQUEST['south']. '&west=' . $_REQUEST['west'] . '&username=Vexxtraordinary';
 		
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -18,20 +18,20 @@
 		curl_close($ch);
 
 		$decode = json_decode($result,true);
-		//if(isset($decode['timezone'])){	
+		if(isset($decode['earthquakes'])){	
 		$output['status']['code'] = "200";
 		$output['status']['name'] = "ok";
 		$output['status']['description'] = "success";
 		$output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
 		print_r($decode);
-		$output['data'] = $decode['timezone'];
+		$output['data'] = $decode['earthquakes'];
 
-    //} else {
-       // $output['status']['code'] = "500";
-        //$output['status']['name'] = "no data";
-        //$output['status']['description'] = "No data available";
-        //$output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
-    //}
+    } else {
+        $output['status']['code'] = "500";
+        $output['status']['name'] = "no data";
+        $output['status']['description'] = "No data available";
+        $output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
+    }
 
 	header('Content-Type: application/json; charset=UTF-8');
 
