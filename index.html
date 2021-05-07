@@ -28,10 +28,18 @@
 
 					<td id= "addressEntry">
 						<label for "addressLat">Latitude</label>
-						<input type = "number" id ="addressLat" name = "addressLat">
-						<br>
+						<select id ="addressLat" name = "addressLat">
+							<option value="35.746">Longitude: 35.746</option>
+							<option value="32.805">Longitude: 32.805</option>
+							<option value="43.229">Longitude: 43.229</option>
+						</select><br>
+
 						<label for "addressLong">Longitude</label>
-						<input type = "number" id ="addressLong" name = "addressLong">
+						<select id ="addressLong" name = "addressLong">
+							<option value="-86.901">Longitude: -86.90</option>
+							<option value="-96.789">Longitude: -96.789</option>
+							<option value="-108.259">Longitude: -108.259</option>
+						</select><br>
 					</td>
 					<td><button id = "btnAddressSubmit">Get Information</button></td>
 
@@ -41,17 +49,25 @@
 
 					<td id= "eqEntry">
 						<label for "eqNorth">North </label>
-						<input type = "number" id ="eqNorth" name = "eqNorth">
-						<br>
+						<select id ="eqNorth" name = "eqNorth">
+							<option value="44.1">North: 44.1</option>
+							<option value="48.2">North: 48.2</option>
+						</select><br>
 						<label for "eqEast">East</label>
-						<input type = "number" id ="eqEast" name = "eqEast">
-						<br>
-						<label for "eqNorth">South</label>
-						<input type = "number" id ="eqSouth" name = "eqSouth">
-						<br>
-						<label for "eqNorth">West</label>
-						<input type = "number" id ="eqWest" name = "eqWest">
-						<br>
+						<select id ="eqEast" name = "eqEast">
+							<option value="-22.4">East: -9.9</option>
+							<option value="-27.4">East: -27.4</option>
+						</select><br>
+						<label for "eqSouth">South</label>
+						<select id ="eqSouth" name = "eqSouth">
+							<option value="-9.9">South: -9.9</option>
+							<option value="-8.2">South: -8.2</option>
+						</select><br>
+						<label for "eqWest">West</label>
+						<select id ="eqWest" name = "eqWest">
+							<option value="55.2">West: 55.2</option>
+							<option value="50.1">West: 50.1</option>
+						</select><br>
 
 					</td>
 					<td><button id = "btnEqSubmit">Get Information</button></td>
@@ -62,10 +78,18 @@
 										
 					<td id = "postalEntry">
 						<label for "postalLong">Postal Longitude</label>
-						<input type = "number" id ="postalLong" name = "PostalLong"><br>
+						<select id ="postalLong" name = "PostalLong"><br>
+							<option value="-1.604">Longitude: -1.604</option>
+							<option value="5.07">Longitude: 5.07</option>
+							<option value="-77.67">Longitude: -77.67</option>
+						</select><br>
 						
 						<label for "postalLat">Postal Latitude</label>
-						<input type = "number" id ="postalLat" name = "postalLat"><br>
+						<select id ="postalLat" name = "postalLat">
+							<option value="53.56">Latitude: 53.56</option>
+							<option value="50.76">Latitude: 50.76</option>
+							<option value="40.61">Latitude: 40.61</option>
+						</select><br>
 
 						<label for "postalRadius">Radius (KM)</label>
 						<select id="postalRadius">
